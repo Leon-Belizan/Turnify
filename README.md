@@ -71,14 +71,12 @@ git add .
 git commit -m "Describe el cambio realizado"
 ```
 
-Para publicar el proyecto en GitHub:
-
-1. Creá en GitHub un repositorio vacío llamado `Turnify` (sin agregar README, licencia ni `.gitignore`, porque esos archivos ya existen acá).
-2. Copiá la dirección HTTPS del repositorio y ejecutá, desde esta carpeta:
+Este proyecto ya está conectado al repositorio `Leon-Belizan/Turnify`. Para guardar y subir cambios nuevos:
 
 ```bash
-git branch -M main
-git remote add origin DIRECCION_HTTPS_DEL_REPOSITORIO
+git status
+git add .
+git commit -m "Describe el cambio realizado"
 git push -u origin main
 ```
 

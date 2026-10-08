@@ -56,6 +56,17 @@ document.querySelectorAll("[data-filter-form]").forEach((formulario) => {
     campoEspecialidad?.addEventListener("change", filtrarCentros);
 });
 
+// Los accesos populares completan el filtro de especialidad y ejecutan la búsqueda.
+document.querySelectorAll("[data-filter-chip]").forEach((chip) => {
+    chip.addEventListener("click", () => {
+        const selector = document.querySelector("#especialidad");
+        const formulario = chip.closest("section")?.querySelector("[data-filter-form]");
+        if (!selector || !formulario) return;
+        selector.value = chip.dataset.filterChip;
+        formulario.requestSubmit();
+    });
+});
+
 // Guarda los centros favoritos en este navegador para conservarlos al recargar.
 const claveFavoritos = "turnify-centros-favoritos";
 function leerFavoritos() {

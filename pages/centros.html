@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Metadatos y archivos compartidos por las páginas del sitio. -->
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explorá centros médicos y especialidades en Turnify Salud.">
+    <title>Centros médicos | Turnify Salud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Navegación principal: los enlaces relativos funcionan también al publicar el proyecto. -->
+    <header class="site-header"><nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
+        <a class="navbar-brand" href="../index.html" aria-label="Turnify Salud, inicio"><img src="../img/logo.png" alt="Turnify Salud"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="./centros.html">Centros</a></li>
+            <li class="nav-item"><a class="nav-link" href="./como-funciona.html">Cómo funciona</a></li><li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="btn btn-turnify" href="./sacar-turno.html">Sacar turno</a></li>
+        </ul></div>
+    </nav></header>
+
+    <main>
+        <!-- Encabezado de página que explica qué puede hacer la persona. -->
+        <section class="page-hero"><div class="container"><p class="text-turnify fw-bold text-uppercase mb-2">Directorio</p><h1>Centros médicos</h1><p class="muted-copy mb-0">Buscá opciones por nombre, localidad o especialidad.</p></div></section>
+
+        <!-- Filtros: el JavaScript compara estos campos con los datos de cada tarjeta. -->
+        <section class="container content-section pt-4" aria-label="Buscar centros">
+            <form class="row g-3 align-items-end mb-4" data-filter-form>
+                <div class="col-12 col-md-5"><label class="form-label" for="filtro-centro">Centro o localidad</label><input class="form-control" id="filtro-centro" type="search" placeholder="Ej.: Lanús" data-filter-location></div>
+                <div class="col-12 col-md-5"><label class="form-label" for="filtro-especialidad">Especialidad</label><select class="form-select" id="filtro-especialidad" data-filter-specialty><option value="">Todas las especialidades</option><option>Clínica médica</option><option>Pediatría</option><option>Cardiología</option><option>Odontología</option><option>Traumatología</option><option>Ginecología</option><option>Dermatología</option></select></div>
+                <div class="col-12 col-md-2 d-grid"><button class="btn btn-turnify" type="submit">Aplicar filtros</button></div>
+            </form>
+            <p class="search-status" data-search-status aria-live="polite"></p>
+
+            <!-- Tarjetas de centros. Los atributos data-* guardan la información que usa el filtro. -->
+            <div class="row g-4" data-centers-list>
+                <div class="col-12 col-md-6 col-xl-3" data-center-card data-name="Centro Médico Avellaneda" data-location="Avellaneda" data-specialties="clínica médica pediatría cardiología"><article class="card center-card position-relative"><img src="../img/clinica-avellaneda.jpeg" alt="Fachada del Centro Médico Avellaneda"><button class="favorite-button" type="button" aria-label="Guardar Centro Médico Avellaneda en favoritos" aria-pressed="false" data-favorite>♡</button><div class="card-body"><h2 class="h5">Centro Médico Avellaneda</h2><p class="text-secondary"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i>Avellaneda, Buenos Aires</p><p class="small">Clínica médica · Pediatría · Cardiología</p><a class="btn btn-turnify" href="./sacar-turno.html?centro=avellaneda">Consultar turnos</a></div></article></div>
+                <div class="col-12 col-md-6 col-xl-3" data-center-card data-name="Modelo de Quilmes" data-location="Quilmes Sarandi" data-specialties="clínica médica traumatología odontología"><article class="card center-card position-relative"><img src="../img/modelo-quilmes.jpg" alt="Centro médico Modelo de Quilmes"><button class="favorite-button" type="button" aria-label="Guardar Modelo de Quilmes en favoritos" aria-pressed="false" data-favorite>♡</button><div class="card-body"><h2 class="h5">Modelo de Quilmes</h2><p class="text-secondary"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i>Quilmes, Buenos Aires</p><p class="small">Clínica médica · Traumatología · Odontología</p><a class="btn btn-turnify" href="./sacar-turno.html?centro=quilmes">Consultar turnos</a></div></article></div>
+                <div class="col-12 col-md-6 col-xl-3" data-center-card data-name="Sanatorio Modelo Lanús" data-location="Lanús" data-specialties="clínica médica cardiología ginecología"><article class="card center-card position-relative"><img src="../img/modelo-lanus.jpg" alt="Edificio del Sanatorio Modelo Lanús"><button class="favorite-button" type="button" aria-label="Guardar Sanatorio Modelo Lanús en favoritos" aria-pressed="false" data-favorite>♡</button><div class="card-body"><h2 class="h5">Sanatorio Modelo Lanús</h2><p class="text-secondary"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i>Lanús, Buenos Aires</p><p class="small">Clínica médica · Cardiología · Ginecología</p><a class="btn btn-turnify" href="./sacar-turno.html?centro=lanus">Consultar turnos</a></div></article></div>
+                <div class="col-12 col-md-6 col-xl-3" data-center-card data-name="Investigaciones del Sur" data-location="Villa Dominico Avellaneda" data-specialties="pediatría odontología dermatología"><article class="card center-card position-relative"><img src="../img/investigaciones-del-sur.jpeg" alt="Centro Investigaciones del Sur"><button class="favorite-button" type="button" aria-label="Guardar Investigaciones del Sur en favoritos" aria-pressed="false" data-favorite>♡</button><div class="card-body"><h2 class="h5">Investigaciones del Sur</h2><p class="text-secondary"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i>Villa Dominico, Buenos Aires</p><p class="small">Pediatría · Odontología · Dermatología</p><a class="btn btn-turnify" href="./sacar-turno.html?centro=dominico">Consultar turnos</a></div></article></div>
+            </div>
+            <p class="search-status text-center mt-4" data-empty-results hidden>No hay centros que coincidan. Cambiá algún filtro para ver más opciones.</p>
+        </section>
+    </main>
+
+    <!-- Pie de página y archivos JavaScript. -->
+    <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 Turnify Salud · Proyecto académico</span><a href="./contacto.html">¿Necesitás ayuda? Contactanos</a></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../JavaScript/main.js" defer></script>
+</body>
+</html>

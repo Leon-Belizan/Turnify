@@ -1,0 +1,6 @@
+# Archivos temporales del sistema operativo
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales del editor
+.vscode/*.log

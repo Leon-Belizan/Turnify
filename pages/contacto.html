@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Metadatos y archivos compartidos con el resto del sitio. -->
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contactá al equipo de Turnify Salud.">
+    <title>Contacto | Turnify Salud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Navegación principal con el enlace actual marcado. -->
+    <header class="site-header"><nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
+        <a class="navbar-brand" href="../index.html" aria-label="Turnify Salud, inicio"><img src="../img/logo.png" alt="Turnify Salud"></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li><li class="nav-item"><a class="nav-link" href="./centros.html">Centros</a></li><li class="nav-item"><a class="nav-link" href="./como-funciona.html">Cómo funciona</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a></li><li class="nav-item"><a class="btn btn-turnify" href="./sacar-turno.html">Sacar turno</a></li></ul></div>
+    </nav></header>
+
+    <main>
+        <!-- Cabecera de contacto. -->
+        <section class="page-hero"><div class="container"><p class="text-turnify fw-bold text-uppercase mb-2">Estamos para ayudarte</p><h1>Contacto</h1><p class="muted-copy mb-0">Dejanos tu consulta y te mostramos cómo se vería una respuesta.</p></div></section>
+
+        <!-- Formulario de ejemplo: JavaScript valida campos y muestra un mensaje local. -->
+        <section class="container content-section" id="consultas" aria-labelledby="contacto-titulo"><div class="form-card">
+            <h2 class="h3 mb-4" id="contacto-titulo">Escribinos</h2>
+            <form data-contact-form>
+                <div class="mb-3"><label class="form-label" for="nombre">Nombre</label><input class="form-control" id="nombre" name="nombre" autocomplete="name" required></div>
+                <div class="mb-3"><label class="form-label" for="email">Correo electrónico</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
+                <div class="mb-3"><label class="form-label" for="consulta">Tu consulta</label><textarea class="form-control" id="consulta" name="consulta" rows="5" minlength="10" required></textarea></div>
+                <button class="btn btn-turnify" type="submit">Enviar consulta</button>
+                <p class="form-feedback mt-3 mb-0" data-form-feedback aria-live="polite"></p>
+            </form>
+            <p class="small muted-copy mt-3 mb-0">Formulario ilustrativo: no se envían ni almacenan datos.</p>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 Turnify Salud · Proyecto académico</span><a href="../index.html">Volver al inicio</a></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script><script src="../JavaScript/main.js" defer></script>
+</body>
+</html>

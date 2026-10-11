@@ -10,10 +10,21 @@
 </head>
 <body>
     <!-- Barra de navegación adaptable, igual en todas las secciones. -->
-    <header class="site-header"><nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
-        <a class="navbar-brand" href="../index.html" aria-label="Turnify Salud, inicio"><img src="../img/logo.png" alt="Turnify Salud"></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li><li class="nav-item"><a class="nav-link" href="./centros.html">Centros</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="./como-funciona.html">Cómo funciona</a></li><li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li><li class="nav-item"><a class="btn btn-turnify" href="./sacar-turno.html">Sacar turno</a></li><li class="nav-item"><a class="nav-link" href="./iniciar-sesion.html">Iniciar sesión</a></li><li class="nav-item"><a class="btn btn-turnify" href="./registro.html">Crear cuenta</a></li></ul></div>
-    </nav></header>
+    <header>
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a class="logo-link" href="../index.html" aria-label="Turnify Salud, inicio">
+            <img class="logo-img" src="../img/logo-navbar.png" alt="Turnify Salud">
+        </a>
+        <ul class="site-nav-list">
+            <li class="link-a"><a class="links" href="../index.html">Inicio</a></li>
+            <li class="link-a"><a class="links" href="./centros.html">Centros</a></li>
+            <li class="link-a"><a class="links active" aria-current="page" href="./como-funciona.html">Cómo funciona</a></li>
+            <li class="link-a"><a class="links" href="./contacto.html">Contacto</a></li>
+            <li class="link-a"><a class="login-crear" href="./iniciar-sesion.html"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>Iniciar sesión</a></li>
+            <li class="link-a"><a class="login-crear" href="./registro.html"><i class="fa-solid fa-user-plus" aria-hidden="true"></i>Crear cuenta</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <!-- Introducción: resume el propósito de Turnify Salud. -->

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ingresá a Turnify Salud.">
+    <title>Iniciar sesión | Turnify Salud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Barra de navegación compartida con el resto del sitio. -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
+            <a class="navbar-brand" href="../index.html" aria-label="Turnify Salud, inicio"><img src="../img/logo.png" alt="Turnify Salud"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./centros.html">Centros</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-success" href="./iniciar-sesion.html" aria-current="page">Iniciar sesión</a></li>
+                    <li class="nav-item"><a class="btn btn-turnify" href="./registro.html">Crear cuenta</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-layout">
+            <section class="auth-intro">
+                <span class="auth-kicker"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Turnify Salud</span>
+                <h1>Tu salud, más cerca.</h1>
+                <p>Ingresá para continuar con la búsqueda de centros y turnos.</p>
+                <a class="auth-back-link" href="../index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver al inicio</a>
+            </section>
+
+            <section class="auth-card" aria-labelledby="login-title">
+                <h2 id="login-title">Iniciar sesión</h2>
+                <p class="auth-subtitle">Completá tus datos para continuar.</p>
+                <!-- Formulario de demostración: no transmite ni guarda credenciales. -->
+                <form data-auth-form="login">
+                    <div class="mb-3">
+                        <label class="form-label" for="login-email">Correo electrónico</label>
+                        <input class="form-control" id="login-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="login-password">Contraseña</label>
+                        <input class="form-control" id="login-password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+                    </div>
+                    <button class="btn btn-turnify auth-submit" type="submit">Ingresar</button>
+                    <p class="form-feedback auth-feedback" data-auth-feedback aria-live="polite"></p>
+                </form>
+                <p class="auth-switch">¿Todavía no tenés cuenta? <a href="./registro.html">Crear cuenta</a></p>
+                <p class="auth-demo-note">Versión académica de demostración. No se inicia una sesión real.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 Turnify Salud · Proyecto académico</span><a href="../index.html">Volver al inicio</a></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../JavaScript/main.js" defer></script>
+</body>
+</html>

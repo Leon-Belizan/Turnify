@@ -18,18 +18,20 @@ Turnify Salud es una página web académica para explorar centros médicos y pre
 
 ## Estructura de carpetas
 
-```text
+```tex
 HTMLPracticas/
 ├── index.html                 # Inicio, búsqueda, centros destacados y especialidades
 ├── pages/
 │   ├── centros.html            # Directorio con filtros
 │   ├── como-funciona.html      # Explicación del recorrido
 │   ├── contacto.html           # Formulario de contacto de muestra
-│   └── sacar-turno.html        # Solicitud de turno de demostración
+│   ├── sacar-turno.html        # Solicitud de turno de demostración
+│   ├── iniciar-sesion.html     # Pantalla de ingreso de demostración
+│   └── registro.html           # Pantalla de registro de demostración
 ├── styles/main.css             # Estilos propios y reglas para móvil
 ├── JavaScript/main.js          # Filtros, favoritos y formularios
 └── img/                        # Imágenes y logotipo
-```
+
 
 ## Guía para explicar el código
 
@@ -45,21 +47,23 @@ En las páginas internas, las rutas empiezan con `../` para subir desde `pages/`
 
 `styles/main.css` define primero los colores en `:root` para poder reutilizarlos. Luego agrupa reglas para la navegación, portada, tarjetas, formularios y pie de página. Las clases `@media` cambian tamaños y distribución en pantallas chicas. Bootstrap se ocupa de la grilla; este archivo aplica la identidad visual de Turnify.
 
-### JavaScript
+### JavaScrip
 
 `JavaScript/main.js` se incluye al final de cada página con `defer`, así el navegador carga el HTML antes de ejecutar las interacciones.
 
 - `normalizar()` pasa el texto a minúsculas y quita tildes para comparar búsquedas con más facilidad.
 - El bloque `[data-filter-form]` lee los filtros y oculta las tarjetas que no coinciden.
 - Los botones `[data-favorite]` alternan favoritos y los guardan en `localStorage` del navegador.
+- Los carruseles de Inicio usan desplazamiento horizontal con ajuste a cada tarjeta; se pueden deslizar o controlar con las flechas en celular.
 - `[data-contact-form]` valida el formulario y muestra una respuesta de demostración.
 - `[data-booking-form]` acepta una solicitud ficticia y puede preseleccionar el centro indicado en el enlace.
+- `[data-auth-form]` valida los formularios de ingreso y registro y confirma la demostración sin guardar ni enviar contraseñas.
 
 Los atributos `data-*` conectan los elementos del HTML con JavaScript sin depender de nombres de estilo. Los formularios usan validación HTML (`required`, `type="email"` y `minlength`) antes de mostrar la respuesta.
 
 ## Alcance de la demostración
 
-Los centros y las solicitudes son datos de ejemplo. No hay servidor, cuenta de usuario ni conexión con clínicas; los formularios no transmiten información personal. Los favoritos se guardan solo en el navegador usado para la demostración.
+Los centros y las solicitudes son datos de ejemplo. No hay servidor, cuenta de usuario ni conexión con clínicas; los formularios no transmiten información personal. Ingreso y registro son pantallas de demostración: para autenticar usuarios de verdad hace falta un servidor seguro. Los favoritos se guardan solo en el navegador usado para la demostración.
 
 ## Git y GitHub
 
@@ -69,7 +73,7 @@ El historial local de Git ya está iniciado. Para revisar los cambios y preparar
 git status
 git add .
 git commit -m "Describe el cambio realizado"
-```
+
 
 Este proyecto ya está conectado al repositorio `Leon-Belizan/Turnify`. Para guardar y subir cambios nuevos:
 
@@ -78,7 +82,7 @@ git status
 git add .
 git commit -m "Describe el cambio realizado"
 git push -u origin main
-```
+
 
 GitHub solicitará autenticación mediante el navegador o el método configurado en tu computadora. No pongas contraseñas ni tokens dentro del código.
 
@@ -90,4 +94,3 @@ GitHub solicitará autenticación mediante el navegador o el método configurado
 4. Buscar un centro y guardar uno como favorito para mostrar JavaScript.
 5. Explicar la organización de carpetas y cómo Git conserva cambios.
 6. Aclarar que es una maqueta académica sin conexión a centros reales.
-

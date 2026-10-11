@@ -39,7 +39,7 @@ document.querySelectorAll("[data-filter-form]").forEach((formulario) => {
         // Comunica el resultado a lectores de pantalla y muestra una ayuda si no hay coincidencias.
         if (estado) {
             estado.textContent = cantidadVisible === tarjetas.length
-                ? `Mostrando ${cantidadVisible} centros.`
+                ? `Mostrando ${cantidadVisible} centros.
                 : `Encontramos ${cantidadVisible} ${cantidadVisible === 1 ? "centro" : "centros"}.`;
         }
         if (mensajeVacio) mensajeVacio.hidden = cantidadVisible > 0;
@@ -66,6 +66,30 @@ document.querySelectorAll("[data-filter-chip]").forEach((chip) => {
         formulario.requestSubmit();
     });
 });
+
+// Los dos carruseles de Inicio avanzan con flechas y también admiten el gesto táctil.
+function prepararCarrusel(selectorCarrusel, selectorTarjeta, selectorAnterior, selectorSiguiente) {
+    const carrusel = document.querySelector(selectorCarrusel);
+    if (!carrusel) return;
+
+    function moverCarrusel(direccion) {
+        const primeraTarjeta = carrusel.querySelector(selectorTarjeta);
+        if (!primeraTarjeta) return;
+
+        const estilos = getComputedStyle(carrusel);
+        const espacio = Number.parseFloat(estilos.columnGap || estilos.gap) || 0;
+        carrusel.scrollBy({
+            left: direccion * (primeraTarjeta.getBoundingClientRect().width + espacio),
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
+    }
+
+    document.querySelector(selectorAnterior)?.addEventListener("click", () => moverCarrusel(-1));
+    document.querySelector(selectorSiguiente)?.addEventListener("click", () => moverCarrusel(1));
+}
+
+prepararCarrusel("[data-quick-carousel]", "[data-quick-item]", "[data-quick-prev]", "[data-quick-next]");
+prepararCarrusel("[data-centers-carousel]", "[data-center-card]:not([hidden])", "[data-carousel-prev]", "[data-carousel-next]");
 
 // Guarda los centros favoritos en este navegador para conservarlos al recargar.
 const claveFavoritos = "turnify-centros-favoritos";
@@ -141,3 +165,38 @@ if (formularioTurno) {
         if (centroDesdeEnlace) selectorCentro.value = centroDesdeEnlace;
     });
 }
+
+// Valida los formularios de ingreso y registro sin guardar ni enviar credenciales.
+document.querySelectorAll("[data-auth-form]").forEach((formulario) => {
+    const tipo = formulario.dataset.authForm;
+    const campoContrasena = formulario.querySelector('[name="password"]');
+    const confirmarContrasena = formulario.querySelector('[name="confirm-password"]');
+    const mensaje = formulario.querySelector("[data-auth-feedback]");
+
+    if (confirmarContrasena) {
+        const validarConfirmacion = () => {
+            confirmarContrasena.setCustomValidity(
+                confirmarContrasena.value && campoContrasena.value !== confirmarContrasena.value
+                    ? "Las contraseñas no coinciden."
+                    : ""
+            );
+        };
+        confirmarContrasena.addEventListener("input", validarConfirmacion);
+        campoContrasena.addEventListener("input", validarConfirmacion);
+    }
+
+    formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+
+        if (tipo === "register" && campoContrasena.value !== confirmarContrasena.value) {
+            confirmarContrasena.setCustomValidity("Las contraseñas no coinciden.");
+            confirmarContrasena.reportValidity();
+            return;
+        }
+
+        mensaje.textContent = tipo === "register"
+            ? "Formulario validado para la demostración. No se creó ni guardó una cuenta."
+            : "Formulario validado para la demostración. La autenticación requiere un servidor.";
+        mensaje.className = "form-feedback auth-feedback text-success fw-semibold";
+    });
+});

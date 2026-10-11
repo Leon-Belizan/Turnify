@@ -37,15 +37,15 @@
                     <a class="links" href="./pages/contacto.html">Contacto</a>
                 </li>
 
-                <button class="login-crear">
+                <a class="login-crear" href="./pages/iniciar-sesion.html">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     Iniciar sesión
-                </button>
+                </a>
 
-                <button class="login-crear">
+                <a class="login-crear" href="./pages/registro.html">
                     <i class="fa-solid fa-user-plus"></i>
                     Crear cuenta
-                </button>
+                </a>
             </ul>
         </nav>
     </header>
@@ -69,35 +69,44 @@
 
                 <p class="text-accesos"><i class="fa-solid fa-bolt">Accesos rapidos</i></p>
 
-                <div class="cards">
-                    <div class="card">
+                <div class="cards" data-quick-carousel aria-label="Accesos rápidos" role="region" aria-roledescription="carrusel">
+                    <div class="card" data-quick-item>
                         <img src="./img/clinica.png" alt="">
                         <h3>Centro Médico</h3>
                         <p>encontra centros cerca tuyo</p>
                         <a class="btn-cards" href="./pages/centros.html" aria-label="Ver centros médicos"><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
-                    <div class="card">
+                    <div class="card" data-quick-item>
                         <img src="./img/calendario.png" alt="">
                         <h3>Sacar Turno</h3>
                         <p>Reserva tu turno en segundos</p>
                         <a class="btn-cards" href="./pages/sacar-turno.html" aria-label="Sacar un turno"><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
-                    <div class="card">
+                    <div class="card" data-quick-item>
                         <img src="./img/estetoscopio.png" alt="">
                         <h3>Especialidades</h3>
                         <p>Clinica, pediatria y mas</p>
                         <a class="btn-cards" href="#especialidades" aria-label="Ver especialidades"><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
-                    <div class="card">
+                    <div class="card" data-quick-item>
                         <img src="./img/soporte-tecnico.png" alt="">
                         <h3>Soporte</h3>
                         <p>Estamos para ayudarte</p>
                         <a class="btn-cards" href="./pages/contacto.html" aria-label="Contactar soporte"><i class="fa-solid fa-arrow-right"></i></a>
                     </div>
 
+                </div>
+                <div class="quick-carousel-controls" aria-label="Controles de accesos rápidos">
+                    <button class="carousel-arrow" type="button" data-quick-prev aria-label="Ver acceso anterior">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <span class="carousel-hint">Deslizá para ver más</span>
+                    <button class="carousel-arrow" type="button" data-quick-next aria-label="Ver acceso siguiente">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
             <img class="women" src="./img/women.png" alt="">
@@ -144,7 +153,7 @@
             <h2>Centros médicos destacados</h2>
             <div class="linea-titulo"></div>
 
-            <div class="contenedor-centros">
+            <div class="contenedor-centros" data-centers-carousel data-centers-list aria-label="Centros médicos destacados" role="region" aria-roledescription="carrusel">
 
                 <article class="card-centro" data-center-card data-name="Centro Médico Avellaneda" data-location="Avellaneda" data-specialties="clínica médica pediatría cardiología">
 
@@ -278,6 +287,17 @@
 
                 </article>
 
+            </div>
+
+            <!-- En celular, estos controles acompañan el gesto de deslizar las tarjetas. -->
+            <div class="centros-carousel-controls" aria-label="Controles del carrusel de centros">
+                <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Ver centro anterior">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <span class="carousel-hint">Deslizá para explorar los centros</span>
+                <button class="carousel-arrow" type="button" data-carousel-next aria-label="Ver centro siguiente">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
             </div>
 
             <p class="search-status text-center" data-empty-results hidden>No encontramos centros con esos filtros. Probá otra búsqueda.</p>

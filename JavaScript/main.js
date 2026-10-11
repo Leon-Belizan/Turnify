@@ -1,4 +1,5 @@
 /* JavaScript de Turnify Salud: agrega interacciones a las páginas HTML. */
+// ORDEN DEL ARCHIVO: BÚSQUEDA, CARRUSELES, FAVORITOS Y VALIDACIÓN DE FORMULARIOS.
 
 // Prepara una cadena para comparar texto sin distinguir mayúsculas ni tildes.
 function normalizar(texto) {

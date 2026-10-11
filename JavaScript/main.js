@@ -200,3 +200,8 @@ document.querySelectorAll("[data-auth-form]").forEach((formulario) => {
         mensaje.className = "form-feedback auth-feedback text-success fw-semibold";
     });
 });
+
+// Los iconos sociales quedan visibles hasta que se definan las cuentas oficiales.
+document.querySelectorAll("[data-social-placeholder]").forEach((enlace) => {
+    enlace.addEventListener("click", (evento) => evento.preventDefault());
+});
